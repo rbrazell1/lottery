@@ -14,9 +14,9 @@ public class NumberBase {
 
   }
 
-  public static String convertToBase(long value, int radix) {
+  public static String convertToBase(int value, int radix) {
     String rep = "";
-    long n = Math.abs(value);
+    int n = Math.abs(value);
     while (n != 0) {
       int remainder = (int) (n % radix);
       rep = digits[remainder] + rep;
