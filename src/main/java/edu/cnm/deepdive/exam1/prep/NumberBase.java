@@ -17,10 +17,19 @@ public class NumberBase {
   public static String convertToBase(int value, int radix) {
     String rep = "";
     int n = Math.abs(value);
+
+    if (value == 0) {
+      return "0";
+    }
+
+
     while (n != 0) {
       int remainder = (int) (n % radix);
       rep = digits[remainder] + rep;
       n = n / radix;
+    }
+    if (value < 0) {
+      rep = "-" + rep;
     }
 
     return rep;
